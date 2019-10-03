@@ -1,5 +1,7 @@
 package sweeper;
 
+import java.awt.*;
+
 /*1:40 12v it created */
 public enum Box {
     //UNDERGROUND
@@ -18,5 +20,7 @@ public enum Box {
     CLOSED,
     FLAGED,
     BOMBED,
-    NOBOMB
+    NOBOMB;
+    //added 14v
+    public Object image; //changed in 2:30 14v Image --> Object
 }

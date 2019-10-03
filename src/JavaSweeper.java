@@ -5,9 +5,9 @@ import java.awt.*;
 
 /*10:30 Создание игры «Сапёр» на Java до 40 хв.
         далі
-    Java.Сапёр Пошаговое создание игры Minesweeper
+    Java.Сапёр Пошаговое создание игры Minesweeper      https://www.youtube.com/watch?v=SaoxeveWy4o&list=PLt5E226f3KMEv6huOjYdpVKZIz1PSlvEA
         Евгений Витольдович
-        12 видео из 17 (Java.Сапёр — Перечисление кубиков)
+        починаємо з 12 видео из 17 (Java.Сапёр — Перечисление кубиков)
 */
 public class JavaSweeper extends JFrame {
     private JPanel panel;               //19:15 для додавання панелі
@@ -21,6 +21,7 @@ public class JavaSweeper extends JFrame {
 
     //14:00
     private JavaSweeper() {
+        setImages();    //added in 14v
         initPanel();    //20:20 проініціалізуємо панель
         initFrame();        //16:15
     }
@@ -34,7 +35,7 @@ public class JavaSweeper extends JFrame {
                 super.paintComponent(g);
                 //--> 13.Первый цикл
                 for (Box box : Box.values()) //метод values() перебирає всі перечислення
-                    g.drawImage(getImage(box.name().toLowerCase()),
+                    g.drawImage((Image) box.image,  //added in 14v  3:00 --> (Image)        //changed in 14v   getImage(box.name().toLowerCase()) --> box.image
                             box.ordinal() * IMAGE_SIZE,     //ordinal() повертає текущий номер в списку елементів
                             0,
                             this);
@@ -58,6 +59,13 @@ public class JavaSweeper extends JFrame {
         setLocationRelativeTo(null);    //встановлюємо його по центру
         setResizable(false);            //ми не будемо змінювати розміри вікна
         setVisible(true);               //щоб форму було видимо
+    }
+
+    //added in 14v встановить потрібні малюнки до кожного екземпляра перечислення Box
+    private void setImages() {
+        for (Box box : Box.values()) {
+            box.image = getImage(box.name().toLowerCase());
+        }
     }
 
     private Image getImage(String name) {   //33:00 напишемо ф-цію, яка буде займатись отриманням малюнків
