@@ -12,7 +12,8 @@ public enum Box {
     NUM6,
     NUM7,
     NUM8,
-   //above
+    BOMB,
+    //above
     OPENED,
     CLOSED,
     FLAGED,

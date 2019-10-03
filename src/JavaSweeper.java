@@ -1,3 +1,5 @@
+import sweeper.Box;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -30,8 +32,17 @@ public class JavaSweeper extends JFrame {
             @Override
             protected void paintComponent(Graphics g) { //36:40 ця ф-ція буде автоматично викликатись кожен раз коли потрібно намалювати форму
                 super.paintComponent(g);
+                //--> 13.Первый цикл
+                for (Box box : Box.values()) //метод values() перебирає всі перечислення
+                    g.drawImage(getImage(box.name().toLowerCase()),
+                            box.ordinal() * IMAGE_SIZE,     //ordinal() повертає текущий номер в списку елементів
+                            0,
+                            this);
+                //
+                /* comment in 13 video
                 g.drawImage(getImage("bomb"), 0, 0, this);
                 g.drawImage(getImage("num1"), IMAGE_SIZE, 0, this);
+                */
             }
         };
         //panel.setPreferredSize(new Dimension(500, 500));
