@@ -3,7 +3,7 @@ import sweeper.Box;
 import javax.swing.*;
 import java.awt.*;
 
-/*10:30 Создание игры «Сапёр» на Java до 40 хв.
+/*10:30 Создание игры «Сапёр» на Java до 40 хв. та після 1:00:00 (!!!!!!!!!!!!!!!!!Заапуск програми з jar-файла !!!!!!!!!!!!!!!)
         далі
     Java.Сапёр Пошаговое создание игры Minesweeper      https://www.youtube.com/watch?v=SaoxeveWy4o&list=PLt5E226f3KMEv6huOjYdpVKZIz1PSlvEA
         Евгений Витольдович
@@ -24,6 +24,7 @@ public class JavaSweeper extends JFrame {
         setImages();    //added in 14v
         initPanel();    //20:20 проініціалізуємо панель
         initFrame();        //16:15
+        //1:02:00 давайте зробимо щоб коли програма запускалась в ній була іконочка
     }
 
     private void initPanel() {  //19:25 метод,який буде панель ініціалізувати
@@ -59,6 +60,7 @@ public class JavaSweeper extends JFrame {
         setLocationRelativeTo(null);    //встановлюємо його по центру
         setResizable(false);            //ми не будемо змінювати розміри вікна
         setVisible(true);               //щоб форму було видимо
+        setIconImage(getImage("icon"));//1:02:00 давайте зробимо щоб коли програма запускалась в ній була іконочка
     }
 
     //added in 14v встановить потрібні малюнки до кожного екземпляра перечислення Box
